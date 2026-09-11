@@ -1,6 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
+import { app as databaseApp } from '../server';
 
 const api = express();
 const JWT_SECRET = process.env.JWT_SECRET || 'bake-and-brew-jwt-secret-key-prod-2026';
@@ -57,18 +58,8 @@ api.post('/api/auth/logout', (_req, res) => {
   res.json({ success: true });
 });
 
-api.use(async (req, res, next) => {
-  try {
-    const { app } = await import('../server');
-    app(req, res, next);
-  } catch (error) {
-    console.error('Vercel API initialization failed:', error);
-    if (!res.headersSent) {
-      res.status(503).json({
-        error: 'Database API unavailable. Verify the Vercel DATABASE_URL setting.',
-      });
-    }
-  }
+api.use((req, res, next) => {
+  databaseApp(req, res, next);
 });
 
 export default api;
