@@ -8,8 +8,8 @@ import {
   requireAuth,
   requireOwner,
   requireStaff,
-  AuthenticatedRequest,
 } from './server/auth.ts';
+import type { AuthenticatedRequest } from './server/auth.ts';
 
 const app = express();
 const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1';
