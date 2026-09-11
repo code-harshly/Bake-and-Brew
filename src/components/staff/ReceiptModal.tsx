@@ -59,10 +59,10 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
                   <span>{item.product_name}</span>
                 </div>
                 <div className="text-[#6B6B6B] text-[12px] whitespace-nowrap">
-                  {item.quantity} × ${item.price_at_sale.toFixed(2)}
+                  {item.quantity} × ₹{item.price_at_sale.toFixed(2)}
                 </div>
                 <div className="font-medium whitespace-nowrap">
-                  ${(item.quantity * item.price_at_sale).toFixed(2)}
+                  ₹{(item.quantity * item.price_at_sale).toFixed(2)}
                 </div>
               </div>
             ))}
@@ -72,7 +72,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ sale, onClose }) => 
           <div className="pt-4 space-y-2">
             <div className="flex justify-between text-[15px] font-medium text-[#0A0A0A]">
               <span>Grand total</span>
-              <span>${sale.total_amount.toFixed(2)}</span>
+              <span>₹{sale.total_amount.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-[12px] text-[#6B6B6B]">
               <span>Payment method</span>

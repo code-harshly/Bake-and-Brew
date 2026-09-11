@@ -4,7 +4,7 @@ import { api } from '../../api';
 import {
   ChevronLeft,
   ChevronRight,
-  DollarSign,
+  IndianRupee,
   Receipt,
   TrendingUp,
   CreditCard,
@@ -136,10 +136,10 @@ export const ReportsTab: React.FC = () => {
         <div className="p-5 bg-[#FAFAFA] border border-[#E5E5E5] rounded-[12px]">
           <div className="flex items-center justify-between text-[#6B6B6B] mb-2">
             <span className="text-[13px]">Total revenue</span>
-            <DollarSign className="w-4 h-4 text-[#0A0A0A]" />
+            <IndianRupee className="w-4 h-4 text-[#0A0A0A]" />
           </div>
           <div className="text-[24px] font-medium text-[#0A0A0A]">
-            ${report ? report.totalRevenue.toFixed(2) : '0.00'}
+            ₹{report ? report.totalRevenue.toFixed(2) : '0.00'}
           </div>
           <p className="text-[12px] text-[#6B6B6B] mt-1">Gross sales for {monthName}</p>
         </div>
@@ -161,7 +161,7 @@ export const ReportsTab: React.FC = () => {
             <TrendingUp className="w-4 h-4 text-[#0A0A0A]" />
           </div>
           <div className="text-[24px] font-medium text-[#0A0A0A]">
-            ${report ? report.averageOrderValue.toFixed(2) : '0.00'}
+            ₹{report ? report.averageOrderValue.toFixed(2) : '0.00'}
           </div>
           <p className="text-[12px] text-[#6B6B6B] mt-1">Revenue per checkout</p>
         </div>
@@ -172,7 +172,7 @@ export const ReportsTab: React.FC = () => {
             <CreditCard className="w-4 h-4 text-[#0A0A0A]" />
           </div>
           <div className="text-[24px] font-medium text-[#0A0A0A]">
-            ${report?.paymentBreakdown?.upi ? report.paymentBreakdown.upi.revenue.toFixed(2) : '0.00'}
+            ₹{report?.paymentBreakdown?.upi ? report.paymentBreakdown.upi.revenue.toFixed(2) : '0.00'}
           </div>
           <p className="text-[12px] text-[#6B6B6B] mt-1">
             {report?.paymentBreakdown?.upi ? report.paymentBreakdown.upi.count : 0} transactions
@@ -207,7 +207,7 @@ export const ReportsTab: React.FC = () => {
                     fontSize={11}
                     tickLine={false}
                     axisLine={{ stroke: '#E5E5E5' }}
-                    tickFormatter={(val) => `$${val}`}
+                    tickFormatter={(val) => `₹${val}`}
                   />
                   <Tooltip
                     cursor={{ fill: '#FAFAFA' }}
@@ -218,7 +218,7 @@ export const ReportsTab: React.FC = () => {
                           <div className="bg-white border border-[#E5E5E5] p-2.5 rounded-[8px] text-[12px]">
                             <p className="font-medium text-[#0A0A0A]">{data.day}</p>
                             <p className="text-[#6B6B6B] mt-0.5">
-                              Revenue: <span className="font-medium text-[#0A0A0A]">${data.revenue.toFixed(2)}</span>
+                              Revenue: <span className="font-medium text-[#0A0A0A]">₹{data.revenue.toFixed(2)}</span>
                             </p>
                           </div>
                         );
@@ -270,7 +270,7 @@ export const ReportsTab: React.FC = () => {
                           <div className="bg-white border border-[#E5E5E5] p-2 rounded-[8px] text-[12px]">
                             <p className="font-medium text-[#0A0A0A]">{data.name}</p>
                             <p className="text-[#6B6B6B]">
-                              ${data.value.toFixed(2)} ({data.count} txns)
+                              ₹{data.value.toFixed(2)} ({data.count} txns)
                             </p>
                           </div>
                         );
@@ -299,7 +299,7 @@ export const ReportsTab: React.FC = () => {
                   <span className="text-[#0A0A0A] font-medium">{p.name}</span>
                   <span className="text-[11px] text-[#6B6B6B]">({p.count} txns)</span>
                 </div>
-                <span className="font-medium text-[#0A0A0A]">${p.value.toFixed(2)}</span>
+                <span className="font-medium text-[#0A0A0A]">₹{p.value.toFixed(2)}</span>
               </div>
             ))}
           </div>
@@ -347,7 +347,7 @@ export const ReportsTab: React.FC = () => {
                       {item.quantity}
                     </td>
                     <td className="py-3.5 px-4 text-right font-medium text-[#0A0A0A]">
-                      ${item.revenue.toFixed(2)}
+                      ₹{item.revenue.toFixed(2)}
                     </td>
                   </tr>
                 ))

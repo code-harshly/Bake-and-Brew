@@ -240,7 +240,7 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
                         {p.category}
                       </td>
                       <td className="py-3.5 px-4 text-[#0A0A0A] font-medium">
-                        ${p.price.toFixed(2)}
+                        ₹{p.price.toFixed(2)}
                       </td>
                       <td className="py-3.5 px-4">
                         <div className="flex items-center gap-2">

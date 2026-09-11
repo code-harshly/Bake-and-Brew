@@ -261,7 +261,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
 
                     <div className="flex items-center justify-between mt-3 pt-2 border-t border-[#E5E5E5]/60">
                       <span className="text-[15px] font-medium text-[#0A0A0A]">
-                        ${product.price.toFixed(2)}
+                        ₹{product.price.toFixed(2)}
                       </span>
 
                       {!isOutOfStock && (
@@ -324,7 +324,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
                         {item.product.name}
                       </p>
                       <p className="text-[12px] text-[#6B6B6B]">
-                        ${item.product.price.toFixed(2)} each
+                        ₹{item.product.price.toFixed(2)} each
                       </p>
                     </div>
 
@@ -353,7 +353,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
 
                       {/* Line Total */}
                       <span className="w-16 text-right text-[14px] font-medium text-[#0A0A0A]">
-                        ${lineTotal.toFixed(2)}
+                        ₹{lineTotal.toFixed(2)}
                       </span>
 
                       {/* Remove Button */}
@@ -404,7 +404,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
               </div>
               <div className="flex justify-between text-[17px] font-medium text-[#0A0A0A] pt-1">
                 <span>Total amount</span>
-                <span>${totalAmount.toFixed(2)}</span>
+                <span>₹{totalAmount.toFixed(2)}</span>
               </div>
             </div>
 
@@ -422,7 +422,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
                   <span>Processing sale...</span>
                 </>
               ) : (
-                <span>Complete sale (${totalAmount.toFixed(2)})</span>
+                <span>Complete sale (₹{totalAmount.toFixed(2)})</span>
               )}
             </button>
           </div>
