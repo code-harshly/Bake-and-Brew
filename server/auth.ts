@@ -14,20 +14,17 @@ export interface AuthenticatedRequest extends Request {
   user?: JwtPayload;
 }
 
-// Default bcrypt hashes for development / out-of-the-box preview:
-// owner123 -> $2b$10$KRakQgMbCT3BT4irFNiD.u9accr4g8LdJgyzz5bkWuNevY2fZdOGm
-// staff123 -> $2b$10$5UWwLmaAQN2CpNgnBE9AFekox0XmHNEY/zjzEH46bRYQEm/WGfjC6
-const DEFAULT_OWNER_HASH = '$2b$10$KRakQgMbCT3BT4irFNiD.u9accr4g8LdJgyzz5bkWuNevY2fZdOGm';
-const DEFAULT_STAFF_HASH = '$2b$10$5UWwLmaAQN2CpNgnBE9AFekox0XmHNEY/zjzEH46bRYQEm/WGfjC6';
+const OWNER_PASSWORD = 'owner123';
+const STAFF_PASSWORD = 'staff123';
 
 export const JWT_SECRET = process.env.JWT_SECRET || 'bake-and-brew-jwt-secret-key-prod-2026';
 
 export function getOwnerPasswordConfig(): string {
-  return process.env.OWNER_PASSWORD_HASH || '';
+  return OWNER_PASSWORD;
 }
 
 export function getStaffPasswordConfig(): string {
-  return process.env.STAFF_PASSWORD_HASH || '';
+  return STAFF_PASSWORD;
 }
 
 function normalizeConfiguredPassword(value: string): string {
@@ -42,7 +39,7 @@ function normalizeConfiguredPassword(value: string): string {
   return trimmed;
 }
 
-async function verifyPasswordMatch(password: string, envVal: string, defaultHash: string): Promise<boolean> {
+async function verifyPasswordMatch(password: string, envVal: string): Promise<boolean> {
   envVal = normalizeConfiguredPassword(envVal);
 
   // 1. If user set plain text in environment variable
@@ -61,15 +58,6 @@ async function verifyPasswordMatch(password: string, envVal: string, defaultHash
     }
   }
 
-  // 3. Fallback to default hash (supports owner123 / staff123)
-  try {
-    if (await bcrypt.compare(password, defaultHash)) {
-      return true;
-    }
-  } catch {
-    // ignore comparison error
-  }
-
   return false;
 }
 
@@ -86,14 +74,14 @@ export async function authenticatePassword(password: string): Promise<{ token: s
   const staffConfig = getStaffPasswordConfig();
 
   // 1. Check Owner
-  const isOwner = await verifyPasswordMatch(password, ownerConfig, DEFAULT_OWNER_HASH);
+  const isOwner = await verifyPasswordMatch(password, ownerConfig);
   if (isOwner) {
     const token = jwt.sign({ role: 'owner' }, JWT_SECRET, { expiresIn: '8h' });
     return { token, role: 'owner' };
   }
 
   // 2. Check Staff
-  const isStaff = await verifyPasswordMatch(password, staffConfig, DEFAULT_STAFF_HASH);
+  const isStaff = await verifyPasswordMatch(password, staffConfig);
   if (isStaff) {
     const token = jwt.sign({ role: 'staff' }, JWT_SECRET, { expiresIn: '8h' });
     return { token, role: 'staff' };
