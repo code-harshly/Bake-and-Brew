@@ -1,0 +1,51 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum PaymentMethod {
+  upi
+  cash
+  card
+}
+
+model Product {
+  id                  String     @id @default(uuid())
+  name                String
+  category            String
+  price               Decimal    @db.Decimal(10, 2)
+  current_stock       Int
+  low_stock_threshold Int
+  created_at          DateTime   @default(now())
+  updated_at          DateTime   @updatedAt
+  sale_items          SaleItem[]
+
+  @@map("products")
+}
+
+model Sale {
+  id             String        @id @default(uuid())
+  timestamp      DateTime      @default(now())
+  total_amount   Decimal       @db.Decimal(10, 2)
+  payment_method PaymentMethod
+  created_at     DateTime      @default(now())
+  items          SaleItem[]
+
+  @@map("sales")
+}
+
+model SaleItem {
+  id            String   @id @default(uuid())
+  sale_id       String
+  product_id    String
+  quantity      Int
+  price_at_sale Decimal  @db.Decimal(10, 2)
+  sale          Sale     @relation(fields: [sale_id], references: [id], onDelete: Cascade)
+  product       Product  @relation(fields: [product_id], references: [id], onDelete: Restrict)
+
+  @@map("sale_items")
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Bake & Brew",
+  "description": "Café inventory and billing system with single login and dual role access for owner and staff.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

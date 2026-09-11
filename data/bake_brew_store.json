@@ -1,0 +1,1121 @@
+{
+  "products": [
+    {
+      "name": "Espresso",
+      "category": "coffee",
+      "price": 3.5,
+      "current_stock": 45,
+      "low_stock_threshold": 15,
+      "id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Double Espresso",
+      "category": "coffee",
+      "price": 4.25,
+      "current_stock": 35,
+      "low_stock_threshold": 12,
+      "id": "379e89e3-569f-428b-85cb-8325142c6d23",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Americano",
+      "category": "coffee",
+      "price": 4,
+      "current_stock": 40,
+      "low_stock_threshold": 15,
+      "id": "efdd0c9e-1348-4884-ba44-87b593868462",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Cappuccino",
+      "category": "coffee",
+      "price": 4.75,
+      "current_stock": 28,
+      "low_stock_threshold": 12,
+      "id": "619bb47f-1894-49f0-b0ff-5132ed553e33",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Caffè Latte",
+      "category": "coffee",
+      "price": 5,
+      "current_stock": 30,
+      "low_stock_threshold": 12,
+      "id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Caramel Macchiato",
+      "category": "coffee",
+      "price": 5.5,
+      "current_stock": 18,
+      "low_stock_threshold": 10,
+      "id": "6de52eda-ea7e-40bb-b09f-d31e470f903b",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Iced Cold Brew",
+      "category": "coffee",
+      "price": 4.75,
+      "current_stock": 14,
+      "low_stock_threshold": 10,
+      "id": "750345cf-55d1-4896-b261-ecc0eeba674a",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Vanilla Sweet Cream Cold Brew",
+      "category": "coffee",
+      "price": 5.75,
+      "current_stock": 9,
+      "low_stock_threshold": 8,
+      "id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Matcha Green Tea Latte",
+      "category": "coffee",
+      "price": 5.5,
+      "current_stock": 16,
+      "low_stock_threshold": 8,
+      "id": "408ce979-39c8-45ab-991f-09ceffe93e35",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Butter Croissant",
+      "category": "bakery",
+      "price": 3.8,
+      "current_stock": 6,
+      "low_stock_threshold": 10,
+      "id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Almond Croissant",
+      "category": "bakery",
+      "price": 4.5,
+      "current_stock": 2,
+      "low_stock_threshold": 8,
+      "id": "df9a1724-327c-4839-aadb-cfa0b6eb6a5b",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:57.803Z"
+    },
+    {
+      "name": "Blueberry Scone",
+      "category": "bakery",
+      "price": 4.2,
+      "current_stock": 15,
+      "low_stock_threshold": 6,
+      "id": "e43c4210-76ae-490d-99cf-84a800e270e0",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Warm Cinnamon Roll",
+      "category": "bakery",
+      "price": 4.75,
+      "current_stock": 3,
+      "low_stock_threshold": 8,
+      "id": "616a0061-e5b3-43a7-9fb0-757cbe0c48b6",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Dark Chocolate Brownie",
+      "category": "bakery",
+      "price": 3.95,
+      "current_stock": 0,
+      "low_stock_threshold": 6,
+      "id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Artisan Sourdough Toast & Butter",
+      "category": "bakery",
+      "price": 4.5,
+      "current_stock": 22,
+      "low_stock_threshold": 6,
+      "id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Hibiscus Herbal Tea",
+      "category": "other",
+      "price": 3.95,
+      "current_stock": 25,
+      "low_stock_threshold": 8,
+      "id": "a7cb7b93-4ff6-43fd-b62a-0bde77c1e996",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Earl Grey Reserve",
+      "category": "other",
+      "price": 3.95,
+      "current_stock": 20,
+      "low_stock_threshold": 8,
+      "id": "ed7b30bc-7807-470f-9d2a-9b40e07cac21",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Sparkling Mineral Water",
+      "category": "other",
+      "price": 2.75,
+      "current_stock": 32,
+      "low_stock_threshold": 10,
+      "id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    },
+    {
+      "name": "Oat Milk Addition",
+      "category": "other",
+      "price": 0.85,
+      "current_stock": 50,
+      "low_stock_threshold": 15,
+      "id": "bc4ee5a2-6be1-4944-92d9-f1eed627817b",
+      "created_at": "2026-08-11T19:50:29.467Z",
+      "updated_at": "2026-09-10T19:50:29.467Z"
+    }
+  ],
+  "sales": [
+    {
+      "id": "22eecaa7-1b50-4753-ba0a-a3fb2612069c",
+      "timestamp": "2026-09-10T19:50:57.803Z",
+      "total_amount": 9,
+      "payment_method": "upi",
+      "created_at": "2026-09-10T19:50:57.803Z",
+      "items": [
+        {
+          "id": "d48a0882-caba-4b6a-8c96-d4b87634cb0d",
+          "sale_id": "22eecaa7-1b50-4753-ba0a-a3fb2612069c",
+          "product_id": "df9a1724-327c-4839-aadb-cfa0b6eb6a5b",
+          "product_name": "Almond Croissant",
+          "quantity": 2,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "8c77cde6-5078-49e4-a059-5edb70ff4b56",
+      "timestamp": "2026-08-06T20:25:09.998Z",
+      "total_amount": 25,
+      "payment_method": "upi",
+      "created_at": "2026-08-06T20:25:09.998Z",
+      "items": [
+        {
+          "id": "631f5982-66ba-4a53-a1d7-6d9d9cfcbd3c",
+          "sale_id": "8c77cde6-5078-49e4-a059-5edb70ff4b56",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 2,
+          "price_at_sale": 5
+        },
+        {
+          "id": "03dbd5da-733e-41b8-bfb1-0cefa92e01dc",
+          "sale_id": "8c77cde6-5078-49e4-a059-5edb70ff4b56",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 2,
+          "price_at_sale": 4
+        },
+        {
+          "id": "0b22f87a-1f37-43a8-ba91-c79c35be58f9",
+          "sale_id": "8c77cde6-5078-49e4-a059-5edb70ff4b56",
+          "product_id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+          "product_name": "Espresso",
+          "quantity": 2,
+          "price_at_sale": 3.5
+        }
+      ]
+    },
+    {
+      "id": "09f85e06-1afc-4ad2-8cf4-c15907b22b2b",
+      "timestamp": "2026-08-07T18:30:45.465Z",
+      "total_amount": 20.75,
+      "payment_method": "card",
+      "created_at": "2026-08-07T18:30:45.465Z",
+      "items": [
+        {
+          "id": "cd466ed9-2901-496b-9677-7e1fac356f3a",
+          "sale_id": "09f85e06-1afc-4ad2-8cf4-c15907b22b2b",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 1,
+          "price_at_sale": 5.75
+        },
+        {
+          "id": "fb298066-ccb4-4445-b5d4-4c2f0599c87a",
+          "sale_id": "09f85e06-1afc-4ad2-8cf4-c15907b22b2b",
+          "product_id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+          "product_name": "Espresso",
+          "quantity": 2,
+          "price_at_sale": 3.5
+        },
+        {
+          "id": "be477bc0-1629-41b9-9313-5ee1f7cdecb5",
+          "sale_id": "09f85e06-1afc-4ad2-8cf4-c15907b22b2b",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 2,
+          "price_at_sale": 4
+        }
+      ]
+    },
+    {
+      "id": "14bfcbd1-5ef9-4139-8def-c18de2dcce94",
+      "timestamp": "2026-08-08T17:16:34.476Z",
+      "total_amount": 11.85,
+      "payment_method": "upi",
+      "created_at": "2026-08-08T17:16:34.476Z",
+      "items": [
+        {
+          "id": "0fd553ba-c531-4210-87ba-d8ff7414195d",
+          "sale_id": "14bfcbd1-5ef9-4139-8def-c18de2dcce94",
+          "product_id": "ed7b30bc-7807-470f-9d2a-9b40e07cac21",
+          "product_name": "Earl Grey Reserve",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "b37c5316-1299-4569-ada5-8ee85de80c61",
+          "sale_id": "14bfcbd1-5ef9-4139-8def-c18de2dcce94",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        }
+      ]
+    },
+    {
+      "id": "14ac5f5c-7eac-4dea-946a-1d17cc647797",
+      "timestamp": "2026-08-09T20:10:50.552Z",
+      "total_amount": 11.5,
+      "payment_method": "upi",
+      "created_at": "2026-08-09T20:10:50.552Z",
+      "items": [
+        {
+          "id": "334a45f8-d374-4dab-bbd7-c0f4dfcee72f",
+          "sale_id": "14ac5f5c-7eac-4dea-946a-1d17cc647797",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 2,
+          "price_at_sale": 5.75
+        }
+      ]
+    },
+    {
+      "id": "d2855c23-0f19-4905-8378-d15b1e12c9bf",
+      "timestamp": "2026-08-10T19:44:25.785Z",
+      "total_amount": 3.8,
+      "payment_method": "upi",
+      "created_at": "2026-08-10T19:44:25.785Z",
+      "items": [
+        {
+          "id": "52b8f230-9340-498e-9701-d6a652953f48",
+          "sale_id": "d2855c23-0f19-4905-8378-d15b1e12c9bf",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 1,
+          "price_at_sale": 3.8
+        }
+      ]
+    },
+    {
+      "id": "ab5b5aba-16ac-4b8c-8218-f12124faec01",
+      "timestamp": "2026-08-11T17:02:56.168Z",
+      "total_amount": 15.2,
+      "payment_method": "upi",
+      "created_at": "2026-08-11T17:02:56.168Z",
+      "items": [
+        {
+          "id": "f5668607-d672-4506-ab9f-6e2983832a87",
+          "sale_id": "ab5b5aba-16ac-4b8c-8218-f12124faec01",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "1aec275c-68ec-4345-905e-afff87fde4df",
+          "sale_id": "ab5b5aba-16ac-4b8c-8218-f12124faec01",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 1,
+          "price_at_sale": 5.75
+        },
+        {
+          "id": "2b6c0510-1684-4c58-80e1-0a86cfb31efd",
+          "sale_id": "ab5b5aba-16ac-4b8c-8218-f12124faec01",
+          "product_id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+          "product_name": "Sparkling Mineral Water",
+          "quantity": 2,
+          "price_at_sale": 2.75
+        }
+      ]
+    },
+    {
+      "id": "4d93ca67-7abe-464e-8978-8556bb644f37",
+      "timestamp": "2026-08-12T19:57:40.408Z",
+      "total_amount": 17,
+      "payment_method": "upi",
+      "created_at": "2026-08-12T19:57:40.408Z",
+      "items": [
+        {
+          "id": "8b675de8-05e6-45a4-b738-713110213e33",
+          "sale_id": "4d93ca67-7abe-464e-8978-8556bb644f37",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        },
+        {
+          "id": "c1afc229-25dc-441b-a87d-27f8f0824dbb",
+          "sale_id": "4d93ca67-7abe-464e-8978-8556bb644f37",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 2,
+          "price_at_sale": 4
+        },
+        {
+          "id": "d0cd4276-f8b0-40f9-aa34-e580ca864c9f",
+          "sale_id": "4d93ca67-7abe-464e-8978-8556bb644f37",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "7f2efe37-4dbf-4285-a258-44ad42ee8e3d",
+      "timestamp": "2026-08-13T19:45:15.597Z",
+      "total_amount": 15.4,
+      "payment_method": "card",
+      "created_at": "2026-08-13T19:45:15.597Z",
+      "items": [
+        {
+          "id": "ccc8af73-5e2d-4211-99fe-077a331a4df1",
+          "sale_id": "7f2efe37-4dbf-4285-a258-44ad42ee8e3d",
+          "product_id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+          "product_name": "Sparkling Mineral Water",
+          "quantity": 1,
+          "price_at_sale": 2.75
+        },
+        {
+          "id": "d4f1e55c-e37d-4317-bd83-9c4d68adea2a",
+          "sale_id": "7f2efe37-4dbf-4285-a258-44ad42ee8e3d",
+          "product_id": "a7cb7b93-4ff6-43fd-b62a-0bde77c1e996",
+          "product_name": "Hibiscus Herbal Tea",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "9c587615-1df8-4c53-8958-f0c7023514a1",
+          "sale_id": "7f2efe37-4dbf-4285-a258-44ad42ee8e3d",
+          "product_id": "616a0061-e5b3-43a7-9fb0-757cbe0c48b6",
+          "product_name": "Warm Cinnamon Roll",
+          "quantity": 1,
+          "price_at_sale": 4.75
+        }
+      ]
+    },
+    {
+      "id": "5fabf01d-b0cb-44c0-be4b-b79d71af8b79",
+      "timestamp": "2026-08-14T21:55:51.731Z",
+      "total_amount": 10.35,
+      "payment_method": "card",
+      "created_at": "2026-08-14T21:55:51.731Z",
+      "items": [
+        {
+          "id": "cb2f83c2-8434-423e-a4b6-edd4728fa7b2",
+          "sale_id": "5fabf01d-b0cb-44c0-be4b-b79d71af8b79",
+          "product_id": "616a0061-e5b3-43a7-9fb0-757cbe0c48b6",
+          "product_name": "Warm Cinnamon Roll",
+          "quantity": 2,
+          "price_at_sale": 4.75
+        },
+        {
+          "id": "19c071b2-598f-4d9f-88d6-3c61cc24232c",
+          "sale_id": "5fabf01d-b0cb-44c0-be4b-b79d71af8b79",
+          "product_id": "bc4ee5a2-6be1-4944-92d9-f1eed627817b",
+          "product_name": "Oat Milk Addition",
+          "quantity": 1,
+          "price_at_sale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "d0b17021-a77b-42c0-9590-78c7c5e2946b",
+      "timestamp": "2026-08-15T17:17:44.085Z",
+      "total_amount": 19.95,
+      "payment_method": "upi",
+      "created_at": "2026-08-15T17:17:44.085Z",
+      "items": [
+        {
+          "id": "35680c65-fd19-46b6-a25e-dd390080a34d",
+          "sale_id": "d0b17021-a77b-42c0-9590-78c7c5e2946b",
+          "product_id": "df9a1724-327c-4839-aadb-cfa0b6eb6a5b",
+          "product_name": "Almond Croissant",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        },
+        {
+          "id": "4984b322-e63b-4510-94f9-bce588069ae4",
+          "sale_id": "d0b17021-a77b-42c0-9590-78c7c5e2946b",
+          "product_id": "a7cb7b93-4ff6-43fd-b62a-0bde77c1e996",
+          "product_name": "Hibiscus Herbal Tea",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "b8dd9e9b-2ab6-49e3-abf8-0d9233ffd324",
+          "sale_id": "d0b17021-a77b-42c0-9590-78c7c5e2946b",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 2,
+          "price_at_sale": 5.75
+        }
+      ]
+    },
+    {
+      "id": "7a25a897-0c55-4fed-b1c8-91fe88553c59",
+      "timestamp": "2026-08-16T21:24:34.437Z",
+      "total_amount": 4.5,
+      "payment_method": "upi",
+      "created_at": "2026-08-16T21:24:34.437Z",
+      "items": [
+        {
+          "id": "2a54830d-bdcc-448f-b37a-5b3fa3c6fa1c",
+          "sale_id": "7a25a897-0c55-4fed-b1c8-91fe88553c59",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "bb08ac89-5583-421c-b667-7ca10a11a4de",
+      "timestamp": "2026-08-17T17:51:27.647Z",
+      "total_amount": 4.25,
+      "payment_method": "card",
+      "created_at": "2026-08-17T17:51:27.647Z",
+      "items": [
+        {
+          "id": "c3be024a-5252-4d7f-9f2a-8a31187dc664",
+          "sale_id": "bb08ac89-5583-421c-b667-7ca10a11a4de",
+          "product_id": "379e89e3-569f-428b-85cb-8325142c6d23",
+          "product_name": "Double Espresso",
+          "quantity": 1,
+          "price_at_sale": 4.25
+        }
+      ]
+    },
+    {
+      "id": "ea168acf-840c-48e5-a1ad-66a3b470e869",
+      "timestamp": "2026-08-18T18:16:38.891Z",
+      "total_amount": 14,
+      "payment_method": "cash",
+      "created_at": "2026-08-18T18:16:38.891Z",
+      "items": [
+        {
+          "id": "dab97096-d12d-45cc-92f4-0efad2690333",
+          "sale_id": "ea168acf-840c-48e5-a1ad-66a3b470e869",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        },
+        {
+          "id": "62a80faf-649d-49db-857a-1032253061c2",
+          "sale_id": "ea168acf-840c-48e5-a1ad-66a3b470e869",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 2,
+          "price_at_sale": 5
+        }
+      ]
+    },
+    {
+      "id": "35db04b7-2ce2-4768-ae0b-2aeed1b154ae",
+      "timestamp": "2026-08-19T21:08:28.167Z",
+      "total_amount": 11,
+      "payment_method": "upi",
+      "created_at": "2026-08-19T21:08:28.167Z",
+      "items": [
+        {
+          "id": "39a155ce-2510-4077-b773-9974a11216cf",
+          "sale_id": "35db04b7-2ce2-4768-ae0b-2aeed1b154ae",
+          "product_id": "408ce979-39c8-45ab-991f-09ceffe93e35",
+          "product_name": "Matcha Green Tea Latte",
+          "quantity": 2,
+          "price_at_sale": 5.5
+        }
+      ]
+    },
+    {
+      "id": "7406fa2a-d0de-49cc-9a42-e3cbf45bc58b",
+      "timestamp": "2026-08-20T18:17:38.902Z",
+      "total_amount": 5.75,
+      "payment_method": "upi",
+      "created_at": "2026-08-20T18:17:38.902Z",
+      "items": [
+        {
+          "id": "2694ffc1-3d23-447b-92b5-d17c713d4bda",
+          "sale_id": "7406fa2a-d0de-49cc-9a42-e3cbf45bc58b",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 1,
+          "price_at_sale": 5.75
+        }
+      ]
+    },
+    {
+      "id": "e7f80c0d-369c-4128-8a89-814741dee699",
+      "timestamp": "2026-08-21T20:59:28.773Z",
+      "total_amount": 12.4,
+      "payment_method": "card",
+      "created_at": "2026-08-21T20:59:28.773Z",
+      "items": [
+        {
+          "id": "bfb6e2b8-2ec9-4214-a768-10500789742c",
+          "sale_id": "e7f80c0d-369c-4128-8a89-814741dee699",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        },
+        {
+          "id": "b8957e69-d85e-4a50-9222-e21ab04860b6",
+          "sale_id": "e7f80c0d-369c-4128-8a89-814741dee699",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        }
+      ]
+    },
+    {
+      "id": "f808bd92-c606-4395-928d-34e8c3f19cb6",
+      "timestamp": "2026-08-22T19:27:29.321Z",
+      "total_amount": 7.6,
+      "payment_method": "cash",
+      "created_at": "2026-08-22T19:27:29.321Z",
+      "items": [
+        {
+          "id": "fed3837b-fc5a-4a52-8ad4-734d7cb826e0",
+          "sale_id": "f808bd92-c606-4395-928d-34e8c3f19cb6",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 2,
+          "price_at_sale": 3.8
+        }
+      ]
+    },
+    {
+      "id": "bd08277d-00a9-4a94-9426-30349fa1b19c",
+      "timestamp": "2026-08-23T22:14:45.638Z",
+      "total_amount": 17.45,
+      "payment_method": "card",
+      "created_at": "2026-08-23T22:14:45.638Z",
+      "items": [
+        {
+          "id": "22625bea-9af1-49f1-bc84-5718a1e7f6b2",
+          "sale_id": "bd08277d-00a9-4a94-9426-30349fa1b19c",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 1,
+          "price_at_sale": 5.75
+        },
+        {
+          "id": "87f32d83-ffcb-4ea5-a734-1e9119b572c8",
+          "sale_id": "bd08277d-00a9-4a94-9426-30349fa1b19c",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 2,
+          "price_at_sale": 5
+        },
+        {
+          "id": "d1c41989-a86c-4773-9412-06bc512a20e4",
+          "sale_id": "bd08277d-00a9-4a94-9426-30349fa1b19c",
+          "product_id": "bc4ee5a2-6be1-4944-92d9-f1eed627817b",
+          "product_name": "Oat Milk Addition",
+          "quantity": 2,
+          "price_at_sale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "3ff32846-84d0-456a-926e-608a6102e1ac",
+      "timestamp": "2026-08-24T21:07:25.879Z",
+      "total_amount": 11.5,
+      "payment_method": "upi",
+      "created_at": "2026-08-24T21:07:25.879Z",
+      "items": [
+        {
+          "id": "cf692514-9b5a-4c8f-9b49-9b2277e91cdf",
+          "sale_id": "3ff32846-84d0-456a-926e-608a6102e1ac",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 2,
+          "price_at_sale": 5.75
+        }
+      ]
+    },
+    {
+      "id": "324af727-ded8-4a81-a534-3066d841aacf",
+      "timestamp": "2026-08-25T17:48:28.404Z",
+      "total_amount": 3.95,
+      "payment_method": "cash",
+      "created_at": "2026-08-25T17:48:28.404Z",
+      "items": [
+        {
+          "id": "63b6aa44-0d50-403a-bd53-ad1bb48d71d8",
+          "sale_id": "324af727-ded8-4a81-a534-3066d841aacf",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        }
+      ]
+    },
+    {
+      "id": "4d3a6cb5-2181-43ff-9d7f-5e9acc797142",
+      "timestamp": "2026-08-26T17:34:15.143Z",
+      "total_amount": 9.5,
+      "payment_method": "upi",
+      "created_at": "2026-08-26T17:34:15.143Z",
+      "items": [
+        {
+          "id": "5dbb6a08-3b31-441c-9934-6c3ce8ba39d9",
+          "sale_id": "4d3a6cb5-2181-43ff-9d7f-5e9acc797142",
+          "product_id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+          "product_name": "Sparkling Mineral Water",
+          "quantity": 2,
+          "price_at_sale": 2.75
+        },
+        {
+          "id": "915d5ad1-3734-4ee5-84fd-d9ed01683727",
+          "sale_id": "4d3a6cb5-2181-43ff-9d7f-5e9acc797142",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        }
+      ]
+    },
+    {
+      "id": "db1a0abd-bb9b-4428-bfa3-5fbd2401960c",
+      "timestamp": "2026-08-27T17:19:40.053Z",
+      "total_amount": 16,
+      "payment_method": "cash",
+      "created_at": "2026-08-27T17:19:40.053Z",
+      "items": [
+        {
+          "id": "08f19b80-917a-4d9a-8051-c3c4b21b87ab",
+          "sale_id": "db1a0abd-bb9b-4428-bfa3-5fbd2401960c",
+          "product_id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+          "product_name": "Espresso",
+          "quantity": 2,
+          "price_at_sale": 3.5
+        },
+        {
+          "id": "f36cc233-8011-4833-8dc0-a8de234887aa",
+          "sale_id": "db1a0abd-bb9b-4428-bfa3-5fbd2401960c",
+          "product_id": "df9a1724-327c-4839-aadb-cfa0b6eb6a5b",
+          "product_name": "Almond Croissant",
+          "quantity": 2,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "0c0544de-b9c6-4354-a115-59d41a7ba1b4",
+      "timestamp": "2026-08-28T17:57:34.324Z",
+      "total_amount": 14.25,
+      "payment_method": "card",
+      "created_at": "2026-08-28T17:57:34.324Z",
+      "items": [
+        {
+          "id": "e8ecbf75-634d-41f9-a286-5dd73997ae3a",
+          "sale_id": "0c0544de-b9c6-4354-a115-59d41a7ba1b4",
+          "product_id": "79e08412-56df-4cc2-a8fb-5d8e8df3126a",
+          "product_name": "Vanilla Sweet Cream Cold Brew",
+          "quantity": 1,
+          "price_at_sale": 5.75
+        },
+        {
+          "id": "ec3222b2-7404-4258-be8a-299b7193c934",
+          "sale_id": "0c0544de-b9c6-4354-a115-59d41a7ba1b4",
+          "product_id": "379e89e3-569f-428b-85cb-8325142c6d23",
+          "product_name": "Double Espresso",
+          "quantity": 2,
+          "price_at_sale": 4.25
+        }
+      ]
+    },
+    {
+      "id": "b6d40de5-130a-40bb-978c-699dc5f5560e",
+      "timestamp": "2026-08-29T20:31:32.900Z",
+      "total_amount": 14.75,
+      "payment_method": "card",
+      "created_at": "2026-08-29T20:31:32.900Z",
+      "items": [
+        {
+          "id": "82608ee4-e128-477f-a7fd-ce5af0a9fa17",
+          "sale_id": "b6d40de5-130a-40bb-978c-699dc5f5560e",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 2,
+          "price_at_sale": 4
+        },
+        {
+          "id": "d252c23d-2ec5-461e-978d-a747d663c0b8",
+          "sale_id": "b6d40de5-130a-40bb-978c-699dc5f5560e",
+          "product_id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+          "product_name": "Sparkling Mineral Water",
+          "quantity": 1,
+          "price_at_sale": 2.75
+        },
+        {
+          "id": "0ac5956b-a1bb-4e4b-a8ee-a414eee2a074",
+          "sale_id": "b6d40de5-130a-40bb-978c-699dc5f5560e",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        }
+      ]
+    },
+    {
+      "id": "c15af297-48e7-45e5-b4a3-e256df48274d",
+      "timestamp": "2026-08-30T21:08:03.261Z",
+      "total_amount": 3.95,
+      "payment_method": "upi",
+      "created_at": "2026-08-30T21:08:03.261Z",
+      "items": [
+        {
+          "id": "31aa405e-9e2e-4211-92c2-b2b7ed0315d2",
+          "sale_id": "c15af297-48e7-45e5-b4a3-e256df48274d",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        }
+      ]
+    },
+    {
+      "id": "88e08355-ac60-4e78-a65a-7606f35b253c",
+      "timestamp": "2026-08-31T18:35:09.031Z",
+      "total_amount": 16.9,
+      "payment_method": "upi",
+      "created_at": "2026-08-31T18:35:09.031Z",
+      "items": [
+        {
+          "id": "e79dbcf1-2fb5-49d2-be7d-70028a6a70e2",
+          "sale_id": "88e08355-ac60-4e78-a65a-7606f35b253c",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "5eda7224-1f33-414a-8b76-3fe2913961a0",
+          "sale_id": "88e08355-ac60-4e78-a65a-7606f35b253c",
+          "product_id": "df9a1724-327c-4839-aadb-cfa0b6eb6a5b",
+          "product_name": "Almond Croissant",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        },
+        {
+          "id": "12170a48-9a28-4bfd-a017-d37d7d87f4af",
+          "sale_id": "88e08355-ac60-4e78-a65a-7606f35b253c",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "b31d3755-44bb-49b1-acc4-1e113229255b",
+      "timestamp": "2026-09-01T21:05:16.032Z",
+      "total_amount": 15.7,
+      "payment_method": "cash",
+      "created_at": "2026-09-01T21:05:16.032Z",
+      "items": [
+        {
+          "id": "a75e5c9f-b0dc-467c-b6d0-17bceb46eaea",
+          "sale_id": "b31d3755-44bb-49b1-acc4-1e113229255b",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 1,
+          "price_at_sale": 3.8
+        },
+        {
+          "id": "19b0a248-000f-4d1c-a76c-e4cd23dd19ee",
+          "sale_id": "b31d3755-44bb-49b1-acc4-1e113229255b",
+          "product_id": "e43c4210-76ae-490d-99cf-84a800e270e0",
+          "product_name": "Blueberry Scone",
+          "quantity": 2,
+          "price_at_sale": 4.2
+        },
+        {
+          "id": "de389724-e845-4bc0-aacb-a71d5ba6b904",
+          "sale_id": "b31d3755-44bb-49b1-acc4-1e113229255b",
+          "product_id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+          "product_name": "Espresso",
+          "quantity": 1,
+          "price_at_sale": 3.5
+        }
+      ]
+    },
+    {
+      "id": "7cb8bdf8-e877-46a7-a53c-b3c3f93d2730",
+      "timestamp": "2026-09-02T21:25:10.977Z",
+      "total_amount": 20.6,
+      "payment_method": "card",
+      "created_at": "2026-09-02T21:25:10.977Z",
+      "items": [
+        {
+          "id": "6d25aaf9-4c2e-4cbc-823e-2f0640f87b44",
+          "sale_id": "7cb8bdf8-e877-46a7-a53c-b3c3f93d2730",
+          "product_id": "619bb47f-1894-49f0-b0ff-5132ed553e33",
+          "product_name": "Cappuccino",
+          "quantity": 2,
+          "price_at_sale": 4.75
+        },
+        {
+          "id": "968ef462-964b-44cc-baba-56f3b40f8964",
+          "sale_id": "7cb8bdf8-e877-46a7-a53c-b3c3f93d2730",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 2,
+          "price_at_sale": 3.8
+        },
+        {
+          "id": "481e062a-a62f-4543-87bc-538a48fb6399",
+          "sale_id": "7cb8bdf8-e877-46a7-a53c-b3c3f93d2730",
+          "product_id": "218c0737-01f0-4ef6-8fda-cf7b6ccb75ac",
+          "product_name": "Espresso",
+          "quantity": 1,
+          "price_at_sale": 3.5
+        }
+      ]
+    },
+    {
+      "id": "f07f048e-c791-49be-8e5e-a225f0ff0992",
+      "timestamp": "2026-09-03T17:46:05.628Z",
+      "total_amount": 6.45,
+      "payment_method": "upi",
+      "created_at": "2026-09-03T17:46:05.628Z",
+      "items": [
+        {
+          "id": "90df0cb6-3087-4711-a680-efee3a29cf75",
+          "sale_id": "f07f048e-c791-49be-8e5e-a225f0ff0992",
+          "product_id": "bc4ee5a2-6be1-4944-92d9-f1eed627817b",
+          "product_name": "Oat Milk Addition",
+          "quantity": 2,
+          "price_at_sale": 0.85
+        },
+        {
+          "id": "558f730c-ebaf-494f-a06a-d6e8a0bbe0db",
+          "sale_id": "f07f048e-c791-49be-8e5e-a225f0ff0992",
+          "product_id": "616a0061-e5b3-43a7-9fb0-757cbe0c48b6",
+          "product_name": "Warm Cinnamon Roll",
+          "quantity": 1,
+          "price_at_sale": 4.75
+        }
+      ]
+    },
+    {
+      "id": "94241cba-082d-400e-ad52-e7f35619e4c6",
+      "timestamp": "2026-09-04T19:13:17.898Z",
+      "total_amount": 4,
+      "payment_method": "card",
+      "created_at": "2026-09-04T19:13:17.898Z",
+      "items": [
+        {
+          "id": "b5526a70-0dbe-4e7b-9daa-26947e6c958c",
+          "sale_id": "94241cba-082d-400e-ad52-e7f35619e4c6",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        }
+      ]
+    },
+    {
+      "id": "99aa389a-c843-41b6-b314-53350cae84a3",
+      "timestamp": "2026-09-05T19:20:05.289Z",
+      "total_amount": 14,
+      "payment_method": "cash",
+      "created_at": "2026-09-05T19:20:05.289Z",
+      "items": [
+        {
+          "id": "82d029f2-3b06-4ff5-b20a-abb18ad7d56c",
+          "sale_id": "99aa389a-c843-41b6-b314-53350cae84a3",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        },
+        {
+          "id": "52d9b356-0098-4c72-8fcd-e6edcdd6bbf7",
+          "sale_id": "99aa389a-c843-41b6-b314-53350cae84a3",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 2,
+          "price_at_sale": 4.5
+        }
+      ]
+    },
+    {
+      "id": "06945e67-26f7-411a-a31f-6737a5ed2a6f",
+      "timestamp": "2026-09-06T20:17:32.836Z",
+      "total_amount": 10.5,
+      "payment_method": "cash",
+      "created_at": "2026-09-06T20:17:32.836Z",
+      "items": [
+        {
+          "id": "3242b8cc-280f-4e75-93d0-3957f846374a",
+          "sale_id": "06945e67-26f7-411a-a31f-6737a5ed2a6f",
+          "product_id": "6de52eda-ea7e-40bb-b09f-d31e470f903b",
+          "product_name": "Caramel Macchiato",
+          "quantity": 1,
+          "price_at_sale": 5.5
+        },
+        {
+          "id": "48906081-5062-4c67-9417-9c3f3f61d934",
+          "sale_id": "06945e67-26f7-411a-a31f-6737a5ed2a6f",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        }
+      ]
+    },
+    {
+      "id": "458c048d-045a-454d-8078-d92c4fc84f9f",
+      "timestamp": "2026-09-07T18:35:25.681Z",
+      "total_amount": 4.75,
+      "payment_method": "upi",
+      "created_at": "2026-09-07T18:35:25.681Z",
+      "items": [
+        {
+          "id": "cde0437f-987a-4463-8287-8ee53e059819",
+          "sale_id": "458c048d-045a-454d-8078-d92c4fc84f9f",
+          "product_id": "619bb47f-1894-49f0-b0ff-5132ed553e33",
+          "product_name": "Cappuccino",
+          "quantity": 1,
+          "price_at_sale": 4.75
+        }
+      ]
+    },
+    {
+      "id": "941189eb-a153-4ab2-b4aa-9053592642b4",
+      "timestamp": "2026-09-08T18:49:07.609Z",
+      "total_amount": 13.4,
+      "payment_method": "upi",
+      "created_at": "2026-09-08T18:49:07.609Z",
+      "items": [
+        {
+          "id": "b1182b38-b843-4edb-9be6-5893cf450b3b",
+          "sale_id": "941189eb-a153-4ab2-b4aa-9053592642b4",
+          "product_id": "408ce979-39c8-45ab-991f-09ceffe93e35",
+          "product_name": "Matcha Green Tea Latte",
+          "quantity": 1,
+          "price_at_sale": 5.5
+        },
+        {
+          "id": "076c1bb9-7e10-4110-9ba8-0373cbddd310",
+          "sale_id": "941189eb-a153-4ab2-b4aa-9053592642b4",
+          "product_id": "ed7b30bc-7807-470f-9d2a-9b40e07cac21",
+          "product_name": "Earl Grey Reserve",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        }
+      ]
+    },
+    {
+      "id": "55809bf5-7110-4eb3-9dc8-93a4ff663530",
+      "timestamp": "2026-09-09T21:20:20.830Z",
+      "total_amount": 20.45,
+      "payment_method": "card",
+      "created_at": "2026-09-09T21:20:20.830Z",
+      "items": [
+        {
+          "id": "bcf06ba2-27f9-4984-9c63-bceba790fd7f",
+          "sale_id": "55809bf5-7110-4eb3-9dc8-93a4ff663530",
+          "product_id": "408ce979-39c8-45ab-991f-09ceffe93e35",
+          "product_name": "Matcha Green Tea Latte",
+          "quantity": 1,
+          "price_at_sale": 5.5
+        },
+        {
+          "id": "97ba170e-9e00-4f5d-8cf5-fd8b174c5013",
+          "sale_id": "55809bf5-7110-4eb3-9dc8-93a4ff663530",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 1,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "4fb8c065-87b7-4d30-820a-89d155fe9e92",
+          "sale_id": "55809bf5-7110-4eb3-9dc8-93a4ff663530",
+          "product_id": "408ce979-39c8-45ab-991f-09ceffe93e35",
+          "product_name": "Matcha Green Tea Latte",
+          "quantity": 2,
+          "price_at_sale": 5.5
+        }
+      ]
+    },
+    {
+      "id": "a2f28b32-0f49-4b28-86f1-233fa9079931",
+      "timestamp": "2026-09-10T20:55:42.596Z",
+      "total_amount": 15.1,
+      "payment_method": "cash",
+      "created_at": "2026-09-10T20:55:42.596Z",
+      "items": [
+        {
+          "id": "e0f4d75d-0985-470b-91eb-64c36b9a0d3a",
+          "sale_id": "a2f28b32-0f49-4b28-86f1-233fa9079931",
+          "product_id": "bc4ee5a2-6be1-4944-92d9-f1eed627817b",
+          "product_name": "Oat Milk Addition",
+          "quantity": 2,
+          "price_at_sale": 0.85
+        },
+        {
+          "id": "f0db75ff-ff48-481c-b225-6e5a213b48ec",
+          "sale_id": "a2f28b32-0f49-4b28-86f1-233fa9079931",
+          "product_id": "ab0b5837-1153-4ba0-bd9c-25ca117e86e0",
+          "product_name": "Dark Chocolate Brownie",
+          "quantity": 2,
+          "price_at_sale": 3.95
+        },
+        {
+          "id": "831558e2-f28d-46e8-aed5-fb0088438a00",
+          "sale_id": "a2f28b32-0f49-4b28-86f1-233fa9079931",
+          "product_id": "9b3a3187-eb21-4a1f-8134-7af39f65e3ff",
+          "product_name": "Sparkling Mineral Water",
+          "quantity": 2,
+          "price_at_sale": 2.75
+        }
+      ]
+    }
+  ]
+}
