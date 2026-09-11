@@ -86,13 +86,9 @@ function asSale(record: SaleWithItems): Sale {
 
 class DatabaseService {
   private client: PrismaClient | undefined;
-  private ready: Promise<void>;
-  private initializationError: unknown;
+  private connection: Promise<void> | undefined;
 
   constructor() {
-    this.ready = this.initialize().catch((error: unknown) => {
-      this.initializationError = error;
-    });
   }
 
   private getClient(): PrismaClient {
@@ -103,17 +99,9 @@ class DatabaseService {
     return this.client;
   }
 
-  private async initialize(): Promise<void> {
-    if (process.env.DATABASE_URL) {
-      await this.getClient().$connect();
-    }
-  }
-
   private async database(): Promise<PrismaClient> {
-    await this.ready;
-    if (this.initializationError) {
-      throw this.initializationError;
-    }
+    this.connection ??= this.getClient().$connect();
+    await this.connection;
     return this.getClient();
   }
 
