@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
@@ -54,19 +55,19 @@ async function startServer() {
 
   // --- Staff Billing Routes (Strictly Staff Only) ---
   // Owner calling these receives 403 Forbidden
-  app.get('/api/staff/products', requireStaff, (req, res) => {
+  app.get('/api/staff/products', requireStaff, async (req, res) => {
     try {
-      const products = db.getProducts();
+      const products = await db.getProducts();
       res.json({ products });
     } catch (err: any) {
       res.status(500).json({ error: err.message || 'Failed to load products' });
     }
   });
 
-  app.post('/api/staff/checkout', requireStaff, (req, res) => {
+  app.post('/api/staff/checkout', requireStaff, async (req, res) => {
     try {
       const { items, paymentMethod } = req.body;
-      const sale = db.checkoutAtomic({ items, paymentMethod });
+      const sale = await db.checkoutAtomic({ items, paymentMethod });
       res.status(201).json({ success: true, sale });
     } catch (err: any) {
       res.status(400).json({ error: err.message || 'Checkout failed' });
@@ -75,16 +76,16 @@ async function startServer() {
 
   // --- Owner Inventory & Reports Routes (Strictly Owner Only) ---
   // Staff calling these receives 403 Forbidden
-  app.get('/api/owner/inventory', requireOwner, (req, res) => {
+  app.get('/api/owner/inventory', requireOwner, async (req, res) => {
     try {
-      const products = db.getProducts();
+      const products = await db.getProducts();
       res.json({ products });
     } catch (err: any) {
       res.status(500).json({ error: err.message || 'Failed to load inventory' });
     }
   });
 
-  app.post('/api/owner/inventory', requireOwner, (req, res) => {
+  app.post('/api/owner/inventory', requireOwner, async (req, res) => {
     try {
       const { name, category, price, current_stock, low_stock_threshold } = req.body;
       if (!name || typeof name !== 'string' || name.trim() === '') {
@@ -97,7 +98,7 @@ async function startServer() {
         return res.status(400).json({ error: 'Valid stock count is required.' });
       }
 
-      const product = db.createProduct({
+      const product = await db.createProduct({
         name,
         category: category || 'other',
         price: Number(price),
@@ -111,20 +112,20 @@ async function startServer() {
     }
   });
 
-  app.put('/api/owner/inventory/:id', requireOwner, (req, res) => {
+  app.put('/api/owner/inventory/:id', requireOwner, async (req, res) => {
     try {
       const { id } = req.params;
-      const updated = db.updateProduct(id, req.body);
+      const updated = await db.updateProduct(id, req.body);
       res.json({ success: true, product: updated });
     } catch (err: any) {
       res.status(400).json({ error: err.message || 'Failed to update product' });
     }
   });
 
-  app.delete('/api/owner/inventory/:id', requireOwner, (req, res) => {
+  app.delete('/api/owner/inventory/:id', requireOwner, async (req, res) => {
     try {
       const { id } = req.params;
-      const deleted = db.deleteProduct(id);
+      const deleted = await db.deleteProduct(id);
       if (!deleted) {
         return res.status(404).json({ error: 'Product not found' });
       }
@@ -134,7 +135,7 @@ async function startServer() {
     }
   });
 
-  app.get('/api/owner/reports', requireOwner, (req, res) => {
+  app.get('/api/owner/reports', requireOwner, async (req, res) => {
     try {
       const now = new Date();
       const year = req.query.year ? parseInt(req.query.year as string, 10) : now.getFullYear();
@@ -144,7 +145,7 @@ async function startServer() {
         return res.status(400).json({ error: 'Invalid year or month parameter' });
       }
 
-      const report = db.getMonthlyReport(year, month);
+      const report = await db.getMonthlyReport(year, month);
       res.json({ report });
     } catch (err: any) {
       res.status(500).json({ error: err.message || 'Failed to generate report' });
