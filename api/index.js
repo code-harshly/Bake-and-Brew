@@ -1,25 +1,51 @@
-var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
-  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
-}) : x)(function(x) {
-  if (typeof require !== "undefined") return require.apply(this, arguments);
-  throw Error('Dynamic require of "' + x + '" is not supported');
-});
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // api/handler.ts
-import express2 from "express";
-import cookieParser2 from "cookie-parser";
-import jwt2 from "jsonwebtoken";
+var handler_exports = {};
+__export(handler_exports, {
+  default: () => handler_default
+});
+module.exports = __toCommonJS(handler_exports);
+var import_express2 = __toESM(require("express"));
+var import_cookie_parser2 = __toESM(require("cookie-parser"));
+var import_jsonwebtoken2 = __toESM(require("jsonwebtoken"));
 
 // server.ts
-import "dotenv/config";
-import express from "express";
-import path from "path";
-import cookieParser from "cookie-parser";
+var import_config = require("dotenv/config");
+var import_express = __toESM(require("express"), 1);
+var import_path = __toESM(require("path"), 1);
+var import_cookie_parser = __toESM(require("cookie-parser"), 1);
 
 // server/db.ts
-import crypto from "crypto";
-import { PrismaClient } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+var import_crypto = __toESM(require("crypto"), 1);
+var import_client = require("@prisma/client");
+var import_adapter_pg = require("@prisma/adapter-pg");
 function getDatabaseUrl() {
   const url = process.env.DATABASE_URL;
   if (!url) {
@@ -61,8 +87,8 @@ var DatabaseService = class {
   }
   getClient() {
     if (!this.client) {
-      const adapter = new PrismaPg({ connectionString: getDatabaseUrl() });
-      this.client = new PrismaClient({ adapter });
+      const adapter = new import_adapter_pg.PrismaPg({ connectionString: getDatabaseUrl() });
+      this.client = new import_client.PrismaClient({ adapter });
     }
     return this.client;
   }
@@ -126,7 +152,7 @@ var DatabaseService = class {
     }
     const client = await this.database();
     const sale = await client.$transaction(async (tx) => {
-      const saleId = crypto.randomUUID();
+      const saleId = import_crypto.default.randomUUID();
       const now = /* @__PURE__ */ new Date();
       const itemData = [];
       let totalAmount = 0;
@@ -152,7 +178,7 @@ var DatabaseService = class {
         }
         totalAmount += product.price.toNumber() * itemReq.quantity;
         itemData.push({
-          id: crypto.randomUUID(),
+          id: import_crypto.default.randomUUID(),
           product_id: product.id,
           quantity: itemReq.quantity,
           price_at_sale: product.price.toNumber()
@@ -238,7 +264,7 @@ var DatabaseService = class {
 var db = new DatabaseService();
 
 // server/auth.ts
-import jwt from "jsonwebtoken";
+var import_jsonwebtoken = __toESM(require("jsonwebtoken"), 1);
 var OWNER_PASSWORD = "owner123";
 var STAFF_PASSWORD = "staff123";
 var JWT_SECRET = process.env.JWT_SECRET || "bake-and-brew-jwt-secret-key-prod-2026";
@@ -266,12 +292,12 @@ async function authenticatePassword(password) {
   const staffConfig = getStaffPasswordConfig();
   const isOwner = verifyPasswordMatch(password, ownerConfig);
   if (isOwner) {
-    const token = jwt.sign({ role: "owner" }, JWT_SECRET, { expiresIn: "8h" });
+    const token = import_jsonwebtoken.default.sign({ role: "owner" }, JWT_SECRET, { expiresIn: "8h" });
     return { token, role: "owner" };
   }
   const isStaff = verifyPasswordMatch(password, staffConfig);
   if (isStaff) {
-    const token = jwt.sign({ role: "staff" }, JWT_SECRET, { expiresIn: "8h" });
+    const token = import_jsonwebtoken.default.sign({ role: "staff" }, JWT_SECRET, { expiresIn: "8h" });
     return { token, role: "staff" };
   }
   throw new Error("Invalid password");
@@ -289,7 +315,7 @@ function verifyToken(req) {
   }
   if (!token) return null;
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = import_jsonwebtoken.default.verify(token, JWT_SECRET);
     return decoded;
   } catch {
     return null;
@@ -332,10 +358,10 @@ function requireStaff(req, res, next) {
 }
 
 // server.ts
-var app = express();
+var app = (0, import_express.default)();
 var isProduction = process.env.NODE_ENV === "production" || process.env.VERCEL === "1";
-app.use(express.json());
-app.use(cookieParser());
+app.use(import_express.default.json());
+app.use((0, import_cookie_parser.default)());
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", time: (/* @__PURE__ */ new Date()).toISOString() });
 });
@@ -447,14 +473,14 @@ app.get("/api/owner/reports", requireOwner, async (req, res) => {
   }
 });
 if (isProduction) {
-  const distPath = path.join(process.cwd(), "dist");
-  app.use(express.static(distPath));
+  const distPath = import_path.default.join(process.cwd(), "dist");
+  app.use(import_express.default.static(distPath));
   app.get("*", (req, res, next) => {
     if (req.path.startsWith("/api/")) {
       next();
       return;
     }
-    res.sendFile(path.join(distPath, "index.html"));
+    res.sendFile(import_path.default.join(distPath, "index.html"));
   });
 }
 async function startServer() {
@@ -471,16 +497,16 @@ async function startServer() {
     console.log(`Bake & Brew server running at http://0.0.0.0:${port}`);
   });
 }
-var isMainModule = typeof __require !== "undefined" ? __require.main === module : path.basename(process.argv[1] ?? "") === "server.ts";
+var isMainModule = typeof require !== "undefined" ? require.main === module : import_path.default.basename(process.argv[1] ?? "") === "server.ts";
 if (isMainModule) {
   void startServer();
 }
 
 // api/handler.ts
-var api = express2();
+var api = (0, import_express2.default)();
 var JWT_SECRET2 = process.env.JWT_SECRET || "bake-and-brew-jwt-secret-key-prod-2026";
-api.use(express2.json());
-api.use(cookieParser2());
+api.use(import_express2.default.json());
+api.use((0, import_cookie_parser2.default)());
 api.get("/api/health", (_req, res) => {
   res.json({ status: "ok", time: (/* @__PURE__ */ new Date()).toISOString() });
 });
@@ -491,7 +517,7 @@ api.post("/api/auth/login", (req, res) => {
     res.status(401).json({ error: "Invalid password" });
     return;
   }
-  const token = jwt2.sign({ role }, JWT_SECRET2, { expiresIn: "8h" });
+  const token = import_jsonwebtoken2.default.sign({ role }, JWT_SECRET2, { expiresIn: "8h" });
   res.cookie("token", token, {
     httpOnly: true,
     sameSite: "lax",
@@ -507,7 +533,7 @@ api.get("/api/auth/me", (req, res) => {
     return;
   }
   try {
-    const user = jwt2.verify(token, JWT_SECRET2);
+    const user = import_jsonwebtoken2.default.verify(token, JWT_SECRET2);
     if (user.role !== "owner" && user.role !== "staff") throw new Error("Invalid role");
     res.json({ role: user.role });
   } catch {
@@ -522,6 +548,3 @@ api.use((req, res, next) => {
   app(req, res, next);
 });
 var handler_default = api;
-export {
-  handler_default as default
-};
