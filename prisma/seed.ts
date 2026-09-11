@@ -106,6 +106,9 @@ async function main() {
         });
       }
       return true;
+    }, {
+      maxWait: 30_000,
+      timeout: 120_000,
     });
     if (imported) {
       console.log(`Imported ${legacy.products.length} products and ${legacy.sales.length} sales.`);
