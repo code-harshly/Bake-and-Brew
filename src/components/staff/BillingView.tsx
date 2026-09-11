@@ -4,6 +4,8 @@ import { Product, CartItem, PaymentMethod, Sale } from '../../types';
 import { ReceiptModal } from './ReceiptModal';
 import { LogOut, Plus, Minus, Trash2, ShoppingBag, Search, AlertCircle, RefreshCw } from 'lucide-react';
 
+const COMPLETED_SALE_STORAGE_KEY = 'bake_brew_completed_sale';
+
 interface BillingViewProps {
   onLogout: () => void;
 }
@@ -17,7 +19,17 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('upi');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [completedSale, setCompletedSale] = useState<Sale | null>(null);
+  const [completedSale, setCompletedSale] = useState<Sale | null>(() => {
+    const storedSale = sessionStorage.getItem(COMPLETED_SALE_STORAGE_KEY);
+    if (!storedSale) return null;
+
+    try {
+      return JSON.parse(storedSale) as Sale;
+    } catch {
+      sessionStorage.removeItem(COMPLETED_SALE_STORAGE_KEY);
+      return null;
+    }
+  });
 
   const fetchProducts = async () => {
     try {
@@ -102,6 +114,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
 
       const sale = await api.checkout(itemsPayload, paymentMethod);
       setCompletedSale(sale);
+      sessionStorage.setItem(COMPLETED_SALE_STORAGE_KEY, JSON.stringify(sale));
       setCart([]);
       // Refresh inventory stock
       fetchProducts();
@@ -420,7 +433,10 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
       {completedSale && (
         <ReceiptModal
           sale={completedSale}
-          onClose={() => setCompletedSale(null)}
+          onClose={() => {
+            setCompletedSale(null);
+            sessionStorage.removeItem(COMPLETED_SALE_STORAGE_KEY);
+          }}
         />
       )}
     </div>
