@@ -43,7 +43,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-[#FFFFFF] px-4 py-8">
       {/* Centered Login Card */}
-      <div className="w-full max-w-[320px] bg-[#FAFAFA] border border-[#E5E5E5] rounded-[12px] p-7 text-center">
+      <div className="w-full max-w-[320px] bg-[#FAFAFA] border border-[#E5E5E5] rounded-xl p-7 text-center">
         {/* Solid black circle logo mark */}
         <div className="mx-auto mb-4 w-9 h-9 rounded-full bg-[#111111] flex items-center justify-center">
           <div className="w-2.5 h-2.5 rounded-full bg-white" />
@@ -74,7 +74,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
               }}
               disabled={loading}
               autoFocus
-              className="w-full h-11 px-3 bg-white border border-[#E5E5E5] rounded-[8px] text-[15px] text-[#0A0A0A] placeholder-[#6B6B6B] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors"
+              className="w-full h-11 px-3 bg-white border border-[#E5E5E5] rounded-lg text-[15px] text-[#0A0A0A] placeholder-[#6B6B6B] focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors"
             />
           </div>
 
@@ -88,7 +88,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
             type="submit"
             id="login-submit-btn"
             disabled={loading}
-            className="w-full h-11 bg-[#111111] hover:bg-[#222222] text-white rounded-[8px] text-[15px] font-medium transition-colors disabled:opacity-50 cursor-pointer"
+            className="w-full h-11 bg-[#111111] hover:bg-[#222222] text-white rounded-lg text-[15px] font-medium transition-colors disabled:opacity-50 cursor-pointer"
           >
             {loading ? 'Verifying...' : 'Log in'}
           </button>
@@ -106,7 +106,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
         </button>
 
         {showDemoHelp && (
-          <div className="mt-3 p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded-[8px] text-[12px] text-[#6B6B6B] text-left space-y-2">
+          <div className="mt-3 p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded-lg text-[12px] text-[#6B6B6B] text-left space-y-2">
             <p className="text-[#0A0A0A] font-medium">Click to fill password:</p>
             <div className="flex items-center justify-between gap-1">
               <span>Staff (billing):</span>

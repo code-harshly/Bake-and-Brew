@@ -14,17 +14,18 @@ export interface AuthenticatedRequest extends Request {
   user?: JwtPayload;
 }
 
-const OWNER_PASSWORD = 'owner123';
-const STAFF_PASSWORD = 'staff123';
+function getPasswordConfig(primaryName: string, legacyName: string, fallback: string): string {
+  return process.env[primaryName] || process.env[legacyName] || fallback;
+}
 
 export const JWT_SECRET = process.env.JWT_SECRET || 'bake-and-brew-jwt-secret-key-prod-2026';
 
 export function getOwnerPasswordConfig(): string {
-  return OWNER_PASSWORD;
+  return getPasswordConfig('OWNER_PASSWORD', 'OWNER_PASSWORD_HASH', 'owner123');
 }
 
 export function getStaffPasswordConfig(): string {
-  return STAFF_PASSWORD;
+  return getPasswordConfig('STAFF_PASSWORD', 'STAFF_PASSWORD_HASH', 'staff123');
 }
 
 function normalizeConfiguredPassword(value: string): string {
