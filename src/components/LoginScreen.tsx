@@ -113,13 +113,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
               <div className="flex gap-1">
                 <button
                   type="button"
-                  onClick={() => handleFillPassword('1234')}
-                  className="font-mono text-[#0A0A0A] px-2 py-0.5 border border-[#E5E5E5] rounded bg-white hover:bg-[#E5E5E5] cursor-pointer"
-                >
-                  1234
-                </button>
-                <button
-                  type="button"
                   onClick={() => handleFillPassword('staff123')}
                   className="font-mono text-[#0A0A0A] px-2 py-0.5 border border-[#E5E5E5] rounded bg-white hover:bg-[#E5E5E5] cursor-pointer"
                 >
@@ -130,13 +123,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
             <div className="flex items-center justify-between gap-1">
               <span>Owner (management):</span>
               <div className="flex gap-1">
-                <button
-                  type="button"
-                  onClick={() => handleFillPassword('@nkit2712001')}
-                  className="font-mono text-[#0A0A0A] px-2 py-0.5 border border-[#E5E5E5] rounded bg-white hover:bg-[#E5E5E5] cursor-pointer"
-                >
-                  @nkit...
-                </button>
                 <button
                   type="button"
                   onClick={() => handleFillPassword('owner123')}

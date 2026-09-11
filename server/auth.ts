@@ -30,7 +30,21 @@ export function getStaffPasswordConfig(): string {
   return process.env.STAFF_PASSWORD_HASH || '';
 }
 
+function normalizeConfiguredPassword(value: string): string {
+  const trimmed = value.trim();
+  if (
+    trimmed.length >= 2 &&
+    ((trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+      (trimmed.startsWith("'") && trimmed.endsWith("'")))
+  ) {
+    return trimmed.slice(1, -1);
+  }
+  return trimmed;
+}
+
 async function verifyPasswordMatch(password: string, envVal: string, defaultHash: string): Promise<boolean> {
+  envVal = normalizeConfiguredPassword(envVal);
+
   // 1. If user set plain text in environment variable
   if (envVal && password === envVal) {
     return true;
