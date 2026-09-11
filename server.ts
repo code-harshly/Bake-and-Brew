@@ -2,7 +2,6 @@ import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import { createServer as createViteServer } from 'vite';
 import { db } from './server/db.ts';
 import {
   authenticatePassword,
@@ -12,17 +11,16 @@ import {
   AuthenticatedRequest,
 } from './server/auth.ts';
 
-async function startServer() {
-  const app = express();
-  const PORT = Number(process.env.PORT || 3000);
+const app = express();
+const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1';
 
-  app.use(express.json());
-  app.use(cookieParser());
+app.use(express.json());
+app.use(cookieParser());
 
-  // --- Health Check ---
-  app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', time: new Date().toISOString() });
-  });
+// --- Health Check ---
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', time: new Date().toISOString() });
+});
 
   // --- Auth Routes ---
   app.post('/api/auth/login', async (req, res) => {
@@ -152,24 +150,43 @@ async function startServer() {
     }
   });
 
-  // --- Vite Dev Server Middleware or Static Asset Serving ---
-  if (process.env.NODE_ENV !== 'production') {
+// Production static assets are served by Vercel's output directory. Keep the
+// same middleware for `npm run start` and as a fallback for self-hosted use.
+if (isProduction) {
+  const distPath = path.join(process.cwd(), 'dist');
+  app.use(express.static(distPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) {
+      next();
+      return;
+    }
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
+export { app };
+export default app;
+
+export async function startServer(): Promise<void> {
+  if (!isProduction) {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Bake & Brew server running at http://0.0.0.0:${PORT}`);
+  const port = Number(process.env.PORT || 3000);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Bake & Brew server running at http://0.0.0.0:${port}`);
   });
 }
 
-startServer();
+const isMainModule =
+  typeof require !== 'undefined'
+    ? require.main === module
+    : path.basename(process.argv[1] ?? '') === 'server.ts';
+if (isMainModule) {
+  void startServer();
+}
