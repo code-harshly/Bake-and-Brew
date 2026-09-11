@@ -10,7 +10,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [showDemoHelp, setShowDemoHelp] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,11 +32,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleFillPassword = (pwd: string) => {
-    setPassword(pwd);
-    setError('');
   };
 
   return (
@@ -95,46 +89,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
         </form>
       </div>
 
-      {/* Discreet Demo Helper note outside the card for testers */}
-      <div className="mt-8 text-center max-w-[320px]">
-        <button
-          type="button"
-          onClick={() => setShowDemoHelp(!showDemoHelp)}
-          className="text-[12px] text-[#6B6B6B] hover:text-[#0A0A0A] underline underline-offset-4 cursor-pointer"
-        >
-          {showDemoHelp ? 'Hide demo passwords' : 'Demo system passwords'}
-        </button>
-
-        {showDemoHelp && (
-          <div className="mt-3 p-3 bg-[#FAFAFA] border border-[#E5E5E5] rounded-lg text-[12px] text-[#6B6B6B] text-left space-y-2">
-            <p className="text-[#0A0A0A] font-medium">Click to fill password:</p>
-            <div className="flex items-center justify-between gap-1">
-              <span>Staff (billing):</span>
-              <div className="flex gap-1">
-                <button
-                  type="button"
-                  onClick={() => handleFillPassword('staff123')}
-                  className="font-mono text-[#0A0A0A] px-2 py-0.5 border border-[#E5E5E5] rounded bg-white hover:bg-[#E5E5E5] cursor-pointer"
-                >
-                  staff123
-                </button>
-              </div>
-            </div>
-            <div className="flex items-center justify-between gap-1">
-              <span>Owner (management):</span>
-              <div className="flex gap-1">
-                <button
-                  type="button"
-                  onClick={() => handleFillPassword('owner123')}
-                  className="font-mono text-[#0A0A0A] px-2 py-0.5 border border-[#E5E5E5] rounded bg-white hover:bg-[#E5E5E5] cursor-pointer"
-                >
-                  owner123
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
