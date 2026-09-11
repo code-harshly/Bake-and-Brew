@@ -59,7 +59,7 @@ api.post('/api/auth/logout', (_req, res) => {
 
 api.use(async (req, res, next) => {
   try {
-    const { app } = await import('../server.ts');
+    const { app } = await import('../server');
     app(req, res, next);
   } catch (error) {
     console.error('Vercel API initialization failed:', error);
