@@ -42,8 +42,11 @@ export default function App() {
   };
 
   const handleLogout = async () => {
-    await api.logout();
-    setRole(null);
+    try {
+      await api.logout();
+    } finally {
+      setRole(null);
+    }
   };
 
   if (checkingAuth) {

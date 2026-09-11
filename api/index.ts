@@ -34,6 +34,29 @@ api.post('/api/auth/login', (req, res) => {
   res.json({ success: true, role, token });
 });
 
+api.get('/api/auth/me', (req, res) => {
+  const token = req.cookies?.token || req.headers.authorization?.replace(/^Bearer\s+/, '');
+  if (!token) {
+    res.status(401).json({ error: 'Unauthorized. Please log in.' });
+    return;
+  }
+
+  try {
+    const user = jwt.verify(token, JWT_SECRET) as { role?: 'owner' | 'staff' };
+    if (user.role !== 'owner' && user.role !== 'staff') {
+      throw new Error('Invalid role');
+    }
+    res.json({ role: user.role });
+  } catch {
+    res.status(401).json({ error: 'Unauthorized. Please log in.' });
+  }
+});
+
+api.post('/api/auth/logout', (_req, res) => {
+  res.clearCookie('token', { path: '/' });
+  res.json({ success: true });
+});
+
 api.use(async (req, res, next) => {
   try {
     const { app } = await import('../server.ts');
@@ -41,7 +64,9 @@ api.use(async (req, res, next) => {
   } catch (error) {
     console.error('Vercel API initialization failed:', error);
     if (!res.headersSent) {
-      res.status(500).json({ error: 'API initialization failed' });
+      res.status(503).json({
+        error: 'Database API unavailable. Verify the Vercel DATABASE_URL setting.',
+      });
     }
   }
 });
