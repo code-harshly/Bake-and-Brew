@@ -24,11 +24,11 @@
       "name": "Americano",
       "category": "coffee",
       "price": 4,
-      "current_stock": 40,
+      "current_stock": 38,
       "low_stock_threshold": 15,
       "id": "efdd0c9e-1348-4884-ba44-87b593868462",
       "created_at": "2026-08-11T19:50:29.467Z",
-      "updated_at": "2026-09-10T19:50:29.467Z"
+      "updated_at": "2026-09-11T10:25:05.037Z"
     },
     {
       "name": "Cappuccino",
@@ -44,21 +44,21 @@
       "name": "Caffè Latte",
       "category": "coffee",
       "price": 5,
-      "current_stock": 30,
+      "current_stock": 26,
       "low_stock_threshold": 12,
       "id": "f07aed99-29e9-4c24-94c7-973f4938873f",
       "created_at": "2026-08-11T19:50:29.467Z",
-      "updated_at": "2026-09-10T19:50:29.467Z"
+      "updated_at": "2026-09-11T10:21:56.770Z"
     },
     {
       "name": "Caramel Macchiato",
       "category": "coffee",
       "price": 5.5,
-      "current_stock": 18,
+      "current_stock": 17,
       "low_stock_threshold": 10,
       "id": "6de52eda-ea7e-40bb-b09f-d31e470f903b",
       "created_at": "2026-08-11T19:50:29.467Z",
-      "updated_at": "2026-09-10T19:50:29.467Z"
+      "updated_at": "2026-09-11T10:19:50.832Z"
     },
     {
       "name": "Iced Cold Brew",
@@ -94,11 +94,11 @@
       "name": "Butter Croissant",
       "category": "bakery",
       "price": 3.8,
-      "current_stock": 6,
+      "current_stock": 3,
       "low_stock_threshold": 10,
       "id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
       "created_at": "2026-08-11T19:50:29.467Z",
-      "updated_at": "2026-09-10T19:50:29.467Z"
+      "updated_at": "2026-09-11T10:21:56.770Z"
     },
     {
       "name": "Almond Croissant",
@@ -144,11 +144,11 @@
       "name": "Artisan Sourdough Toast & Butter",
       "category": "bakery",
       "price": 4.5,
-      "current_stock": 22,
+      "current_stock": 21,
       "low_stock_threshold": 6,
       "id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
       "created_at": "2026-08-11T19:50:29.467Z",
-      "updated_at": "2026-09-10T19:50:29.467Z"
+      "updated_at": "2026-09-11T10:25:05.037Z"
     },
     {
       "name": "Hibiscus Herbal Tea",
@@ -192,6 +192,139 @@
     }
   ],
   "sales": [
+    {
+      "id": "08e254ea-8ddd-480b-8acd-565d27ef9210",
+      "timestamp": "2026-09-11T10:25:05.037Z",
+      "total_amount": 8.5,
+      "payment_method": "upi",
+      "created_at": "2026-09-11T10:25:05.037Z",
+      "items": [
+        {
+          "id": "dd100f2f-daef-4e74-a8b0-b2742cc76049",
+          "sale_id": "08e254ea-8ddd-480b-8acd-565d27ef9210",
+          "product_id": "19b052d9-5553-43d6-9893-eaa0a1032c01",
+          "product_name": "Artisan Sourdough Toast & Butter",
+          "quantity": 1,
+          "price_at_sale": 4.5
+        },
+        {
+          "id": "89c18618-5a9b-47bb-a362-10df3965bf9f",
+          "sale_id": "08e254ea-8ddd-480b-8acd-565d27ef9210",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        }
+      ]
+    },
+    {
+      "id": "20ced9df-c357-4729-b07f-c6a111de58f5",
+      "timestamp": "2026-09-11T10:21:56.770Z",
+      "total_amount": 8.8,
+      "payment_method": "upi",
+      "created_at": "2026-09-11T10:21:56.770Z",
+      "items": [
+        {
+          "id": "dad4b334-955e-4c7d-9520-2fd222a2378a",
+          "sale_id": "20ced9df-c357-4729-b07f-c6a111de58f5",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 1,
+          "price_at_sale": 3.8
+        },
+        {
+          "id": "692d1c7c-c78e-44c4-9301-871f6fd7a8b9",
+          "sale_id": "20ced9df-c357-4729-b07f-c6a111de58f5",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        }
+      ]
+    },
+    {
+      "id": "f549aaba-36a7-492c-93b3-0e29e8db5c3c",
+      "timestamp": "2026-09-11T10:19:55.550Z",
+      "total_amount": 8.8,
+      "payment_method": "cash",
+      "created_at": "2026-09-11T10:19:55.550Z",
+      "items": [
+        {
+          "id": "edef2040-0292-46be-99fb-10a0e3d35ae1",
+          "sale_id": "f549aaba-36a7-492c-93b3-0e29e8db5c3c",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        },
+        {
+          "id": "929b8533-c80c-437b-b606-88dee7b3e0e6",
+          "sale_id": "f549aaba-36a7-492c-93b3-0e29e8db5c3c",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 1,
+          "price_at_sale": 3.8
+        }
+      ]
+    },
+    {
+      "id": "422f434a-66f2-4671-ae92-d5416b429ae1",
+      "timestamp": "2026-09-11T10:19:50.832Z",
+      "total_amount": 10.5,
+      "payment_method": "upi",
+      "created_at": "2026-09-11T10:19:50.832Z",
+      "items": [
+        {
+          "id": "94ea95bd-a40a-4959-af03-286ed2453ecc",
+          "sale_id": "422f434a-66f2-4671-ae92-d5416b429ae1",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        },
+        {
+          "id": "885f13de-c65d-48d1-b478-948c259a709c",
+          "sale_id": "422f434a-66f2-4671-ae92-d5416b429ae1",
+          "product_id": "6de52eda-ea7e-40bb-b09f-d31e470f903b",
+          "product_name": "Caramel Macchiato",
+          "quantity": 1,
+          "price_at_sale": 5.5
+        }
+      ]
+    },
+    {
+      "id": "5200c7f7-a6ad-4ea4-9527-64659d7588f3",
+      "timestamp": "2026-09-11T10:19:47.155Z",
+      "total_amount": 12.8,
+      "payment_method": "upi",
+      "created_at": "2026-09-11T10:19:47.155Z",
+      "items": [
+        {
+          "id": "4be6f160-48a4-4ec3-a978-8987fc089c6a",
+          "sale_id": "5200c7f7-a6ad-4ea4-9527-64659d7588f3",
+          "product_id": "efdd0c9e-1348-4884-ba44-87b593868462",
+          "product_name": "Americano",
+          "quantity": 1,
+          "price_at_sale": 4
+        },
+        {
+          "id": "2090650d-9cef-426d-a80e-a6bcf12357a0",
+          "sale_id": "5200c7f7-a6ad-4ea4-9527-64659d7588f3",
+          "product_id": "efa7dead-c155-48b9-af22-8a4ecc3c2d38",
+          "product_name": "Butter Croissant",
+          "quantity": 1,
+          "price_at_sale": 3.8
+        },
+        {
+          "id": "2aa5678a-8007-48ce-a08d-6142c2c8a91e",
+          "sale_id": "5200c7f7-a6ad-4ea4-9527-64659d7588f3",
+          "product_id": "f07aed99-29e9-4c24-94c7-973f4938873f",
+          "product_name": "Caffè Latte",
+          "quantity": 1,
+          "price_at_sale": 5
+        }
+      ]
+    },
     {
       "id": "22eecaa7-1b50-4753-ba0a-a3fb2612069c",
       "timestamp": "2026-09-10T19:50:57.803Z",
