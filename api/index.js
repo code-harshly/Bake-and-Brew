@@ -99,12 +99,15 @@ var DatabaseService = class {
   }
   async getProducts() {
     const client = await this.database();
-    const products = await client.product.findMany({ orderBy: { name: "asc" } });
+    const products = await client.product.findMany({
+      where: { deleted_at: null },
+      orderBy: { name: "asc" }
+    });
     return products.map(asProduct);
   }
   async getProductById(id) {
     const client = await this.database();
-    const product = await client.product.findUnique({ where: { id } });
+    const product = await client.product.findFirst({ where: { id, deleted_at: null } });
     return product ? asProduct(product) : void 0;
   }
   async createProduct(payload) {
@@ -122,7 +125,7 @@ var DatabaseService = class {
   }
   async updateProduct(id, payload) {
     const client = await this.database();
-    const current = await client.product.findUnique({ where: { id } });
+    const current = await client.product.findFirst({ where: { id, deleted_at: null } });
     if (!current) {
       throw new Error("Product not found");
     }
@@ -140,7 +143,10 @@ var DatabaseService = class {
   }
   async deleteProduct(id) {
     const client = await this.database();
-    const deleted = await client.product.deleteMany({ where: { id } });
+    const deleted = await client.product.updateMany({
+      where: { id, deleted_at: null },
+      data: { deleted_at: /* @__PURE__ */ new Date() }
+    });
     return deleted.count > 0;
   }
   async checkoutAtomic(payload) {
@@ -160,7 +166,9 @@ var DatabaseService = class {
         if (!itemReq.productId || itemReq.quantity <= 0) {
           throw new Error("Invalid item or quantity in cart.");
         }
-        const product = await tx.product.findUnique({ where: { id: itemReq.productId } });
+        const product = await tx.product.findFirst({
+          where: { id: itemReq.productId, deleted_at: null }
+        });
         if (!product) {
           throw new Error(`Product not found (ID: ${itemReq.productId}).`);
         }
@@ -207,7 +215,7 @@ var DatabaseService = class {
         where: { timestamp: { gte: start, lt: end } },
         include: { items: { include: { product: true } } }
       }),
-      client.product.findMany()
+      client.product.findMany({ where: { deleted_at: null } })
     ]);
     const mappedSales = sales.map(asSale);
     let totalRevenue = 0;

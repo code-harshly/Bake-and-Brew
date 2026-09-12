@@ -64,9 +64,14 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({
 
   const handleDeleteProduct = async () => {
     if (!productToDelete) return;
-    await api.deleteProduct(productToDelete.id);
-    setProductToDelete(null);
-    await onRefresh();
+    try {
+      setActionError('');
+      await api.deleteProduct(productToDelete.id);
+      setProductToDelete(null);
+      await onRefresh();
+    } catch (err: any) {
+      setActionError(err.message || 'Failed to delete item');
+    }
   };
 
   const handleQuickRestock = async (product: Product, amount: number) => {

@@ -20,6 +20,7 @@ model Product {
   price               Decimal    @db.Decimal(10, 2)
   current_stock       Int
   low_stock_threshold Int
+  deleted_at          DateTime?
   created_at          DateTime   @default(now())
   updated_at          DateTime   @updatedAt
   sale_items          SaleItem[]
