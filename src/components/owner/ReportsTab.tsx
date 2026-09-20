@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MonthlyReport } from '../../types';
 import { api } from '../../api';
+import { DeleteConfirmModal } from '../common/DeleteConfirmModal';
+import { Sale } from '../../types';
 import {
   ChevronLeft,
   ChevronRight,
@@ -30,6 +32,8 @@ export const ReportsTab: React.FC = () => {
   const [report, setReport] = useState<MonthlyReport | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [saleToDelete, setSaleToDelete] = useState<Sale | null>(null);
 
   const fetchReport = async (year: number, month: number) => {
     try {
@@ -355,7 +359,68 @@ export const ReportsTab: React.FC = () => {
             </tbody>
           </table>
         </div>
+      <RecentSalesSection report={report} onDelete={(id) => {}} />
+        <DeleteConfirmModal
+          isOpen={showDeleteModal}
+          onClose={() => setShowDeleteModal(false)}
+          onConfirm={async () => {
+            if (saleToDelete) {
+              await api.deleteSale(saleToDelete.id);
+              setShowDeleteModal(false);
+              setSaleToDelete(null);
+              fetchReport(currentYear, currentMonth);
+            }
+          }}
+        />
+        </div>
+    </div>
+  );
+};
+
+// Recent Sales Section Component (inside ReportsTab)
+const RecentSalesSection: React.FC<{ report: MonthlyReport | null; onDelete: (id: string) => void; }> = ({ report, onDelete }) => {
+  if (!report || !report.recentSales || report.recentSales.length === 0) return null;
+  return (
+    <div className="mt-6 border border-[#E5E5E5] rounded-[12px] bg-white overflow-hidden">
+      <div className="p-4 bg-[#FAFAFA] border-b border-[#E5E5E5]">
+        <h3 className="text-[15px] font-medium text-[#0A0A0A]">Recent Sales (max 100)</h3>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left text-[14px]">
+          <thead className="bg-white text-[#6B6B6B] text-[12px] border-b border-[#E5E5E5]">
+            <tr>
+              <th className="py-3 px-4 font-medium">Date</th>
+              <th className="py-3 px-4 font-medium">Customer</th>
+              <th className="py-3 px-4 font-medium">Amount</th>
+              <th className="py-3 px-4 font-medium text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[#E5E5E5]">
+            {report.recentSales.map((sale) => (
+              <tr key={sale.id} className="hover:bg-[#FAFAFA] transition-colors">
+                <td className="py-3.5 px-4 text-[#6B6B6B]">{new Date(sale.timestamp).toLocaleDateString()}</td>
+                <td className="py-3.5 px-4 text-[#0A0A0A]">{sale.customer_name}</td>
+                <td className="py-3.5 px-4 text-[#0A0A0A]">₹{sale.total_amount.toFixed(2)}</td>
+                <td className="py-3.5 px-4 text-right">
+                  <button
+                    onClick={() => {
+                      setSaleToDelete(sale);
+                      setShowDeleteModal(true);
+                    }}
+                    className="px-3 py-1 bg-[#FF4D4F] text-white rounded-md hover:bg-[#E04445] transition-colors"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
+
+
+
+

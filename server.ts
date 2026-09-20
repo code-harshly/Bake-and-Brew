@@ -133,6 +133,20 @@ app.get('/api/health', (req, res) => {
     }
   });
 
+  // Delete a sale permanently
+  app.delete('/api/owner/sale/:id', requireOwner, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const success = await db.deleteSale(id);
+      if (!success) {
+        return res.status(404).json({ error: 'Sale not found' });
+      }
+      res.json({ success: true });
+    } catch (err: any) {
+      res.status(400).json({ error: err.message || 'Failed to delete sale' });
+    }
+  });
+
   app.get('/api/owner/reports', requireOwner, async (req, res) => {
     try {
       const now = new Date();

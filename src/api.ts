@@ -121,7 +121,10 @@ export const api = {
     return res.product;
   },
 
-  async deleteProduct(id: string): Promise<boolean> {
+  async deleteSale(id: string): Promise<boolean> {
+    const res = await request<{ success: boolean }>(`/api/owner/sale/${id}`, { method: 'DELETE' });
+    return res.success;
+  },
     const res = await request<{ success: boolean }>(`/api/owner/inventory/${id}`, {
       method: 'DELETE',
     });

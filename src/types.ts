@@ -65,6 +65,7 @@ export interface MonthlyReport {
   paymentChart: PaymentBreakdownItem[];
   dailyTrends: DailyTrendItem[];
   bestSellers: BestSeller[];
-  lowStockCount: number;
+  recentSales?: Sale[];
+
   totalProductCount: number;
 }
