@@ -334,52 +334,7 @@ class DatabaseService {
     };
   }
 
-    const start = new Date(year, month - 1, 1);
-    const end = new Date(year, month, 1);
-    const [sales, products] = await Promise.all([
-      client.sale.findMany({
-        where: { timestamp: { gte: start, lt: end } },
-        include: { items: { include: { product: true } } },
-      }),
-      client.product.findMany({ where: { deleted_at: null } }),
-    ]);
-    const mappedSales = sales.map(asSale);
 
-    let totalRevenue = 0;
-    const paymentBreakdown: Record<PaymentMethod, { count: number; revenue: number }> = {
-      upi: { count: 0, revenue: 0 },
-      cash: { count: 0, revenue: 0 },
-      card: { count: 0, revenue: 0 },
-    };
-    const productSalesMap = new Map<string, { name: string; quantity: number; revenue: number }>();
-    const dailyRevenueMap: Record<number, number> = {};
-    const daysInMonth = new Date(year, month, 0).getDate();
-    for (let day = 1; day <= daysInMonth; day++) dailyRevenueMap[day] = 0;
-
-    for (const sale of mappedSales) {
-      totalRevenue += sale.total_amount;
-      const method = sale.payment_method;
-      paymentBreakdown[method].count += 1;
-      paymentBreakdown[method].revenue = Number((paymentBreakdown[method].revenue + sale.total_amount).toFixed(2));
-
-      const day = new Date(sale.timestamp).getDate();
-      dailyRevenueMap[day] = Number(((dailyRevenueMap[day] || 0) + sale.total_amount).toFixed(2));
-      for (const item of sale.items) {
-        const existing = productSalesMap.get(item.product_id) || { name: item.product_name, quantity: 0, revenue: 0 };
-        existing.quantity += item.quantity;
-        existing.revenue = Number((existing.revenue + item.price_at_sale * item.quantity).toFixed(2));
-        productSalesMap.set(item.product_id, existing);
-      }
-    }
-
-    const bestSellers = Array.from(productSalesMap.values())
-      .sort((a, b) => b.quantity - a.quantity)
-      .slice(0, 10);
-    const dailyTrends = Object.entries(dailyRevenueMap).map(([day, revenue]) => ({
-      day: `Day ${day}`,
-      dayNumber: Number(day),
-      revenue,
-    }));
     const paymentChart = [
       { name: 'UPI', value: paymentBreakdown.upi.revenue, count: paymentBreakdown.upi.count, key: 'upi' },
       { name: 'Cash', value: paymentBreakdown.cash.revenue, count: paymentBreakdown.cash.count, key: 'cash' },
