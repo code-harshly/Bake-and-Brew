@@ -285,7 +285,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
         </div>
 
         {/* Right Column: Running Order Ticket & Checkout */}
-        <div className="w-full lg:w-[380px] xl:w-[420px] bg-[#FAFAFA] flex flex-col h-auto lg:h-[calc(100vh-64px)] border-t lg:border-t-0 border-[#E5E5E5]">
+        <div className="w-full lg:w-[380px] xl:w-[420px] bg-[#FAFAFA] flex flex-col h-auto lg:h-[calc(100vh-64px)] border-t lg:border-t-0 border-[#E5E5E5] sticky top-0">
           {/* Order Header */}
           <div className="p-4 border-b border-[#E5E5E5] flex items-center justify-between bg-white">
             <div className="flex items-center gap-2">
