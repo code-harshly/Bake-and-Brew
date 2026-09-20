@@ -359,7 +359,7 @@ export const ReportsTab: React.FC = () => {
             </tbody>
           </table>
         </div>
-      <RecentSalesSection report={report} onDelete={(id) => {}} />
+      <RecentSalesSection report={report} onDelete={(id) => { const selected = report?.recentSales.find(s => s.id === id) ?? null; setSaleToDelete(selected); setShowDeleteModal(true); }} />
         <DeleteConfirmModal
           isOpen={showDeleteModal}
           onClose={() => setShowDeleteModal(false)}
@@ -403,10 +403,7 @@ const RecentSalesSection: React.FC<{ report: MonthlyReport | null; onDelete: (id
                 <td className="py-3.5 px-4 text-[#0A0A0A]">₹{sale.total_amount.toFixed(2)}</td>
                 <td className="py-3.5 px-4 text-right">
                   <button
-                    onClick={() => {
-                      setSaleToDelete(sale);
-                      setShowDeleteModal(true);
-                    }}
+                    onClick={() => onDelete(sale.id)}
                     className="px-3 py-1 bg-[#FF4D4F] text-white rounded-md hover:bg-[#E04445] transition-colors"
                   >
                     Delete
