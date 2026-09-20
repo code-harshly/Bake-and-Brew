@@ -159,7 +159,7 @@ export const BillingView: React.FC<BillingViewProps> = ({ onLogout }) => {
       </header>
 
       {/* Main Billing Workspace */}
-      <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+      <div className="flex-1 flex flex-col lg:flex-row overflow-visible">
         {/* Left Column: Product Selection Grid */}
         <div className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto border-r-0 lg:border-r border-[#E5E5E5]">
           {/* Controls: Search and Category Tabs */}

@@ -411,7 +411,7 @@ const RecentSalesSection: React.FC<{ report: MonthlyReport | null; onDelete: (id
                 <td className="py-3.5 px-4 text-right">
                   <button
                     onClick={() => onDelete(sale.id)}
-                    className="px-3 py-1 bg-[#FF4D4F] text-white rounded-md hover:bg-[#E04445] transition-colors"
+                    className="px-3 py-1 bg-black text-white rounded-md hover:bg-[#E04445] transition-colors"
                   >
                     Delete
                   </button>
