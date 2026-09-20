@@ -311,6 +311,13 @@ export const ReportsTab: React.FC = () => {
       </div>
 
       {/* Best-Selling Products Table */}
+      <div className="mb-6">
+        <RecentSalesSection report={report} onDelete={(id) => {
+          const selected = report?.recentSales.find(s => s.id === id) ?? null;
+          setSaleToDelete(selected);
+          setShowDeleteModal(true);
+        }} />
+      </div>
       <div className="border border-[#E5E5E5] rounded-[12px] bg-white overflow-hidden">
         <div className="p-4 bg-[#FAFAFA] border-b border-[#E5E5E5]">
           <h3 className="text-[15px] font-medium text-[#0A0A0A]">
@@ -359,7 +366,7 @@ export const ReportsTab: React.FC = () => {
             </tbody>
           </table>
         </div>
-      <RecentSalesSection report={report} onDelete={(id) => { const selected = report?.recentSales.find(s => s.id === id) ?? null; setSaleToDelete(selected); setShowDeleteModal(true); }} />
+
         <DeleteConfirmModal
           isOpen={showDeleteModal}
           onClose={() => setShowDeleteModal(false)}
