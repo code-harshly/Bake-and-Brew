@@ -149,6 +149,16 @@ var DatabaseService = class {
     });
     return deleted.count > 0;
   }
+  // Delete a sale permanently
+  async deleteSale(id) {
+    const client = await this.database();
+    try {
+      await client.sale.delete({ where: { id } });
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
   async checkoutAtomic(payload) {
     if (!payload.items || payload.items.length === 0) {
       throw new Error("Cannot complete sale with an empty cart.");
@@ -213,11 +223,13 @@ var DatabaseService = class {
     const [sales, products] = await Promise.all([
       client.sale.findMany({
         where: { timestamp: { gte: start, lt: end } },
-        include: { items: { include: { product: true } } }
+        include: { items: { include: { product: true } } },
+        orderBy: { timestamp: "desc" }
       }),
       client.product.findMany({ where: { deleted_at: null } })
     ]);
     const mappedSales = sales.map(asSale);
+    const recentSales = mappedSales.slice(0, 100);
     let totalRevenue = 0;
     const paymentBreakdown = {
       upi: { count: 0, revenue: 0 },
@@ -265,7 +277,8 @@ var DatabaseService = class {
       dailyTrends,
       bestSellers,
       lowStockCount,
-      totalProductCount: products.length
+      totalProductCount: products.length,
+      recentSales
     };
   }
 };
@@ -464,6 +477,18 @@ app.delete("/api/owner/inventory/:id", requireOwner, async (req, res) => {
     res.json({ success: true, message: "Product deleted" });
   } catch (err) {
     res.status(400).json({ error: err.message || "Failed to delete product" });
+  }
+});
+app.delete("/api/owner/sale/:id", requireOwner, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const success = await db.deleteSale(id);
+    if (!success) {
+      return res.status(404).json({ error: "Sale not found" });
+    }
+    res.json({ success: true });
+  } catch (err) {
+    res.status(400).json({ error: err.message || "Failed to delete sale" });
   }
 });
 app.get("/api/owner/reports", requireOwner, async (req, res) => {

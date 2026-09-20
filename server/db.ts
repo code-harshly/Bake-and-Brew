@@ -335,27 +335,8 @@ class DatabaseService {
   }
 
 
-    const paymentChart = [
-      { name: 'UPI', value: paymentBreakdown.upi.revenue, count: paymentBreakdown.upi.count, key: 'upi' },
-      { name: 'Cash', value: paymentBreakdown.cash.revenue, count: paymentBreakdown.cash.count, key: 'cash' },
-      { name: 'Card', value: paymentBreakdown.card.revenue, count: paymentBreakdown.card.count, key: 'card' },
-    ];
-    const lowStockCount = products.filter((product) => product.current_stock <= product.low_stock_threshold).length;
 
-    return {
-      year,
-      month,
-      totalRevenue: Number(totalRevenue.toFixed(2)),
-      transactionCount: mappedSales.length,
-      averageOrderValue: mappedSales.length > 0 ? Number((totalRevenue / mappedSales.length).toFixed(2)) : 0,
-      paymentBreakdown,
-      paymentChart,
-      dailyTrends,
-      bestSellers,
-      lowStockCount,
-      totalProductCount: products.length,
-    };
-  }
+
 }
 
 export const db = new DatabaseService();
