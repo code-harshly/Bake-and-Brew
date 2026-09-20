@@ -125,11 +125,7 @@ export const api = {
     const res = await request<{ success: boolean }>(`/api/owner/sale/${id}`, { method: 'DELETE' });
     return res.success;
   },
-    const res = await request<{ success: boolean }>(`/api/owner/inventory/${id}`, {
-      method: 'DELETE',
-    });
-    return res.success;
-  },
+
 
   // Owner Reports
   async getOwnerReports(year: number, month: number): Promise<MonthlyReport> {
